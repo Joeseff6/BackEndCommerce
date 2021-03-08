@@ -20,15 +20,15 @@ Product.init(
       allowNull: false
     },
     price: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     stock: {
-      type:DataTypes.NUMBER,
+      type:DataTypes.INTEGER,
       allowNull: false
     },
     category_id: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   },
