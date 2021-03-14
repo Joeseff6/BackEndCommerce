@@ -25,6 +25,12 @@ router.get('/:id', async (req, res) => {
     const productData = await Product.findByPk(req.params.id, {
       include: [{model: Category},{model: Tag}]
     });
+
+    if (!productData) {
+      res.status(404).json({ message: 'There are no products by this id.' });
+      return;
+    };
+
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
@@ -73,7 +79,7 @@ router.put('/:id', (req, res) => {
   })
     .then((product) => {
       // find all associated tags from ProductTag
-      return ProductTag.findAll({ where: { product_id: req.params.id } });
+      return ProductTag.findAll({ where: { product_id: req.params. id } });
     })
     .then((productTags) => {
       // get list of current tag_ids
